@@ -11,11 +11,6 @@
 		ADDCE6A129CDE6790000BBA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6A029CDE6790000BBA6 /* ContentView.swift */; };
 		ADDCE6A329CDE67A0000BBA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDCE6A229CDE67A0000BBA6 /* Assets.xcassets */; };
 		ADDCE6A629CDE67A0000BBA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDCE6A529CDE67A0000BBA6 /* Preview Assets.xcassets */; };
-		ADDCE6A829CDE67A0000BBA6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6A729CDE67A0000BBA6 /* Persistence.swift */; };
-		ADDCE6AB29CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6A929CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodeld */; };
-		ADDCE6B529CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6B429CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.swift */; };
-		ADDCE6BF29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6BE29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.swift */; };
-		ADDCE6C129CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6C029CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +36,8 @@
 		ADDCE6A029CDE6790000BBA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADDCE6A229CDE67A0000BBA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDCE6A529CDE67A0000BBA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ADDCE6A729CDE67A0000BBA6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		ADDCE6AA29CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MixiIosSwiftUITraining.xcdatamodel; sourceTree = "<group>"; };
 		ADDCE6B029CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixiIosSwiftUITrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDCE6B429CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixiIosSwiftUITrainingTests.swift; sourceTree = "<group>"; };
 		ADDCE6BA29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixiIosSwiftUITrainingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDCE6BE29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixiIosSwiftUITrainingUITests.swift; sourceTree = "<group>"; };
-		ADDCE6C029CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixiIosSwiftUITrainingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				ADDCE69D29CDE6790000BBA6 /* MixiIosSwiftUITraining */,
-				ADDCE6B329CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests */,
-				ADDCE6BD29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests */,
 				ADDCE69C29CDE6790000BBA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +89,6 @@
 				ADDCE69E29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift */,
 				ADDCE6A029CDE6790000BBA6 /* ContentView.swift */,
 				ADDCE6A229CDE67A0000BBA6 /* Assets.xcassets */,
-				ADDCE6A729CDE67A0000BBA6 /* Persistence.swift */,
-				ADDCE6A929CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodeld */,
 				ADDCE6A429CDE67A0000BBA6 /* Preview Content */,
 			);
 			path = MixiIosSwiftUITraining;
@@ -114,23 +100,6 @@
 				ADDCE6A529CDE67A0000BBA6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		ADDCE6B329CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests */ = {
-			isa = PBXGroup;
-			children = (
-				ADDCE6B429CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.swift */,
-			);
-			path = MixiIosSwiftUITrainingTests;
-			sourceTree = "<group>";
-		};
-		ADDCE6BD29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ADDCE6BE29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.swift */,
-				ADDCE6C029CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITestsLaunchTests.swift */,
-			);
-			path = MixiIosSwiftUITrainingUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDCE6AB29CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodeld in Sources */,
-				ADDCE6A829CDE67A0000BBA6 /* Persistence.swift in Sources */,
 				ADDCE6A129CDE6790000BBA6 /* ContentView.swift in Sources */,
 				ADDCE69F29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift in Sources */,
 			);
@@ -274,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDCE6B529CDE67A0000BBA6 /* MixiIosSwiftUITrainingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDCE6BF29CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITests.swift in Sources */,
-				ADDCE6C129CDE67A0000BBA6 /* MixiIosSwiftUITrainingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,19 +555,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		ADDCE6A929CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				ADDCE6AA29CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodel */,
-			);
-			currentVersion = ADDCE6AA29CDE67A0000BBA6 /* MixiIosSwiftUITraining.xcdatamodel */;
-			path = MixiIosSwiftUITraining.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = ADDCE69329CDE6790000BBA6 /* Project object */;
 }
