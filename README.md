@@ -11,6 +11,12 @@ MIXI の 2022 新卒 iOS 研修をやるリポジトリ。MVVM + UseCase + Repos
   - YouTube の講義動画
     - https://youtu.be/u5SzwEAydYo
 
+## 成果物
+
+GitHub クライアントアプリ。自分の public なリポジトリを取得して表示することができるシンプルなアプリ。
+
+<img src="https://user-images.githubusercontent.com/42367320/227807006-45f4ae6b-06e4-408a-a9b0-4739a04d9aff.jpeg" width="300" />
+
 ## 目次
 
 - [x] 0. Swift 言語の基本
