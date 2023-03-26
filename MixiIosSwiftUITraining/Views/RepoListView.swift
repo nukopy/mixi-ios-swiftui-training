@@ -13,16 +13,30 @@ enum SearchType {
     case Organization
 }
 
+enum DataLoadingState<Data> {
+    case Idle
+    case Loading
+    case Successed(Data)
+    case Failed(Error)
+}
+
 @MainActor
 class ReposStore: ObservableObject {
-    
-    @Published private(set) var repos = [Repo]()
+    @Published private(set) var dataLoadingState: DataLoadingState<[Repo]> = .Idle
     
     func loadRepos(searchType: SearchType, searchQuery: String) async {
+        dataLoadingState = .Loading
+        
         switch searchType {
         case .Username:
-            let res = await GitHubApiClient.listRepositoriesForAUser(username: searchQuery)
-            self.repos = Repos.fromApiResponseToModel(responseRepos: res)
+            do {
+                let res = try await GitHubApiClient.listRepositoriesForAUser(username: searchQuery)
+                let data = Repos.fromApiResponseToModel(responseRepos: res)
+                dataLoadingState = .Successed(data)
+            } catch let error {
+                print("Error on loadRepos: \(error)")
+                dataLoadingState = .Failed(error)
+            }
         case .Organization:
             // NOP
             // TODO: GitHub Organization 検索用のメソッドを API クライアントに実装する
@@ -39,18 +53,49 @@ struct RepoListView: View {
     
     var body: some View {
         NavigationView {
-            if reposStore.repos.isEmpty {
-                ProgressView("Loading...")
-            } else {
-                List(reposStore.repos) { repo in
-                    NavigationLink(destination: RepoDetailView(repo: repo)
-                        .navigationBarTitleDisplayMode(.inline)
-                    ) {
-                        RepoRowView(repo: repo)
+            Group {
+                switch reposStore.dataLoadingState {
+                case .Idle, .Loading:
+                    ProgressView("Loading...")
+                case .Successed(let repos):
+                    VStack {
+                        if repos.isEmpty {
+                            Text("No repositories")
+                                .fontWeight(.bold)
+                        } else {
+                            List(repos) { repo in
+                                NavigationLink(destination: RepoDetailView(repo: repo)
+                                    .navigationBarTitleDisplayMode(.inline)
+                                ) {
+                                    RepoRowView(repo: repo)
+                                }
+                            }
+                            
+                        }
+                    }
+                case .Failed(_):
+                    VStack {
+                        Group {
+                            Image("GitHubMark")
+                            Text("Failed to load repositories")
+                                .padding(.top, 4)
+                        }
+                        .foregroundColor(.black)
+                        .opacity(0.4)
+                        
+                        Button(action: {
+                            Task {
+                                await reposStore.loadRepos(searchType: searchType, searchQuery: searchQuery)
+                            }
+                        }) {
+                            Text("Retry")
+                                .fontWeight(.bold)
+                        }
+                        .padding(.top, 8)
                     }
                 }
-                .navigationTitle("Repositories")
             }
+            .navigationTitle("Repositories")
         }
         .task {
             await reposStore.loadRepos(searchType: searchType, searchQuery: searchQuery)

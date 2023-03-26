@@ -13,6 +13,6 @@ struct User {
 
 extension User {
     static func fromApiResponseToModel(responseUser: GitHubUser) -> User {
-        return User(name: responseUser.login)
+        return User(name: responseUser.login ?? "(no name)")
     }
 }

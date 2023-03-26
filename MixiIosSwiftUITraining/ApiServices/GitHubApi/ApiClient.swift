@@ -12,7 +12,7 @@ protocol ApiClientProtocol {}
 class GitHubApiClient: ApiClientProtocol {
     typealias cli = HttpClient
     
-    static func listRepositoriesForAUser(username: String, perPage: Int = 10, page: Int = 1) async -> ResponseListRepositoriesForAUser {
+    static func listRepositoriesForAUser(username: String, perPage: Int = 50, page: Int = 1) async throws -> ResponseListRepositoriesForAUser {
         // doc: https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repositories-for-a-user
         let url = "https://api.github.com/users/\(username)/repos"
         let headers = [
@@ -27,10 +27,14 @@ class GitHubApiClient: ApiClientProtocol {
             "per_page": "\(perPage)",
             "page": "\(page)"
         ]
-        let response = try! await cli.get(url: url, headers: headers, queryParams: queryParams) as ResponseListRepositoriesForAUser
         
-        return response
-//        let repos = Repos.fromApiResponseToModel(responseRepos: response)
-//        return repos
+        do {
+            let response = try await cli.get(url: url, headers: headers, queryParams: queryParams) as ResponseListRepositoriesForAUser
+            
+            return response
+        } catch let error {
+            print("Error on GET request to \(url): \(error)")
+            throw error
+        }
     }
 }

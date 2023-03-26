@@ -27,7 +27,7 @@ struct Plan: Decodable {
 // ref: https://github.com/nerdishbynature/octokit.swift/blob/main/OctoKit/User.swift#L9:12
 struct GitHubUser: Decodable {
     let id: Int
-    let login: String // GitHub のユーザ ID (e.g. "nukopy")
+    let login: String? // GitHub のユーザ ID (e.g. "nukopy")
     let avatarURL: String?
     let gravatarID: String?
     let type: String?
