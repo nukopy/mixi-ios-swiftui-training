@@ -1,10 +1,11 @@
 # mixi-ios-swiftui-training
 
-MIXI の 2021 新卒 iOS 研修をやるリポジトリ。MVVM + UseCase + Repository アーキテクチャで実装してみた。
+MIXI の 2022 新卒 iOS 研修をやるリポジトリ。MVVM + UseCase + Repository アーキテクチャで実装してみた。
 
 - リンク
   - ブログ
-    - https://mixi-developers.mixi.co.jp/2021-ios-mixi-training-d981b62e680f
+    - (2022) https://mixi-developers.mixi.co.jp/22-technical-training-5fc362a9dc41#25a3
+    - (2021) https://mixi-developers.mixi.co.jp/2021-ios-mixi-training-d981b62e680f
   - リポジトリ兼ハンズオン資料
     - https://github.com/mixigroup/ios-swiftui-training
   - YouTube の講義動画
@@ -24,7 +25,7 @@ MIXI の 2021 新卒 iOS 研修をやるリポジトリ。MVVM + UseCase + Repos
   - 2.1. Swift Concurrency による非同期処理
   - 2.2. URLSession による通信
   - 2.3. エラーハンドリング
-- [ ] 3. 設計とテスト
+- [x] 3. 設計とテスト
   - 3.1. MVVM アーキテクチャ
   - 3.2. XCTest
   - 3.3. Xcode Previews の再活用
