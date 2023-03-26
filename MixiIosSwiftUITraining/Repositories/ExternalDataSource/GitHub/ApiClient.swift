@@ -12,7 +12,7 @@ protocol ApiClientProtocol {}
 class GitHubApiClient: ApiClientProtocol {
     typealias cli = HttpClient
     
-    static func listRepositoriesForAUser(username: String, perPage: Int = 50, page: Int = 1) async throws -> ResponseListRepositoriesForAUser {
+    static func fetchListRepositoriesForAUser(username: String, perPage: Int = 50, page: Int = 1) async throws -> ResponseListRepositoriesForAUser {
         // doc: https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repositories-for-a-user
         let url = "https://api.github.com/users/\(username)/repos"
         let headers = [

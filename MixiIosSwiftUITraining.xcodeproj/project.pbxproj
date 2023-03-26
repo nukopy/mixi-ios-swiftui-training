@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD29528029D05C6200AAA6C4 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29527F29D05C6200AAA6C4 /* RepoListViewModel.swift */; };
+		AD29528429D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */; };
+		AD29528629D0672900AAA6C4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29528529D0672900AAA6C4 /* Repository.swift */; };
 		ADAFC18629CF61A3006A77FE /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18529CF61A3006A77FE /* Repo.swift */; };
 		ADAFC18829CF61B4006A77FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18729CF61B4006A77FE /* User.swift */; };
 		ADAFC18B29CF62CD006A77FE /* RepoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD29527F29D05C6200AAA6C4 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesOfSpecificUserUseCase.swift; sourceTree = "<group>"; };
+		AD29528529D0672900AAA6C4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		ADAFC18529CF61A3006A77FE /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		ADAFC18729CF61B4006A77FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRowView.swift; sourceTree = "<group>"; };
@@ -52,6 +58,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD29527A29D05BBC00AAA6C4 /* RepoListView */ = {
+			isa = PBXGroup;
+			children = (
+				ADDCE6A029CDE6790000BBA6 /* RepoListView.swift */,
+				ADAFC18C29CF6329006A77FE /* RepoDetailView.swift */,
+				ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */,
+			);
+			path = RepoListView;
+			sourceTree = "<group>";
+		};
+		AD29527B29D05BCE00AAA6C4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AD29527F29D05C6200AAA6C4 /* RepoListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD29527C29D05C0800AAA6C4 /* ExternalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AD29527E29D05C3C00AAA6C4 /* Common */,
+				ADAFC19B29CFAF5F006A77FE /* GitHub */,
+			);
+			path = ExternalDataSource;
+			sourceTree = "<group>";
+		};
+		AD29527E29D05C3C00AAA6C4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFC19529CFA12B006A77FE /* HttpClient.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AD29528129D05E2300AAA6C4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		ADAFC18929CF61BF006A77FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +113,7 @@
 		ADAFC18E29CF63C7006A77FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ADDCE6A029CDE6790000BBA6 /* RepoListView.swift */,
-				ADAFC18C29CF6329006A77FE /* RepoDetailView.swift */,
-				ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */,
+				AD29527A29D05BBC00AAA6C4 /* RepoListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -80,23 +127,23 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		ADAFC19429CFA110006A77FE /* ApiServices */ = {
+		ADAFC19429CFA110006A77FE /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				ADAFC19B29CFAF5F006A77FE /* GitHubApi */,
-				ADAFC19529CFA12B006A77FE /* HttpClient.swift */,
+				AD29527C29D05C0800AAA6C4 /* ExternalDataSource */,
 			);
-			path = ApiServices;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
-		ADAFC19B29CFAF5F006A77FE /* GitHubApi */ = {
+		ADAFC19B29CFAF5F006A77FE /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				AD29528529D0672900AAA6C4 /* Repository.swift */,
 				ADAFC19929CFA5C0006A77FE /* ApiClient.swift */,
 				ADAFC19C29CFAF83006A77FE /* ResponseTypes.swift */,
 				ADAFC1A029CFBAB6006A77FE /* Models.swift */,
 			);
-			path = GitHubApi;
+			path = GitHub;
 			sourceTree = "<group>";
 		};
 		ADDCE69229CDE6790000BBA6 = {
@@ -118,8 +165,10 @@
 		ADDCE69D29CDE6790000BBA6 /* MixiIosSwiftUITraining */ = {
 			isa = PBXGroup;
 			children = (
-				ADAFC19429CFA110006A77FE /* ApiServices */,
 				ADDCE69E29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift */,
+				ADAFC19429CFA110006A77FE /* Repositories */,
+				AD29527B29D05BCE00AAA6C4 /* ViewModels */,
+				AD29528129D05E2300AAA6C4 /* UseCases */,
 				ADAFC18E29CF63C7006A77FE /* Views */,
 				ADAFC18929CF61BF006A77FE /* Models */,
 				ADDCE6A229CDE67A0000BBA6 /* Assets.xcassets */,
@@ -209,7 +258,10 @@
 			files = (
 				ADAFC18829CF61B4006A77FE /* User.swift in Sources */,
 				ADAFC19129CF65D5006A77FE /* User+mock.swift in Sources */,
+				AD29528629D0672900AAA6C4 /* Repository.swift in Sources */,
 				ADAFC19D29CFAF83006A77FE /* ResponseTypes.swift in Sources */,
+				AD29528029D05C6200AAA6C4 /* RepoListViewModel.swift in Sources */,
+				AD29528429D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift in Sources */,
 				ADAFC1A129CFBAB6006A77FE /* Models.swift in Sources */,
 				ADAFC18629CF61A3006A77FE /* Repo.swift in Sources */,
 				ADAFC19A29CFA5C0006A77FE /* ApiClient.swift in Sources */,

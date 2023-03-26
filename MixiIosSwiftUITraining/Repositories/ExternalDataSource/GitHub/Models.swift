@@ -109,7 +109,7 @@ struct GitHubUser: Decodable {
 
 // MARK: - Model - GitHub repository
 // ref: https://github.com/nerdishbynature/octokit.swift/blob/main/OctoKit/Repositories.swift
-struct GitHubRepository: Decodable {
+struct GitHubRepositoryModel: Decodable {
     let id: Int
     let owner: GitHubUser
     let name: String?

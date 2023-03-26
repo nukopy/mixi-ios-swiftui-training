@@ -8,53 +8,13 @@
 import SwiftUI
 import CoreData
 
-enum SearchType {
-    case Username
-    case Organization
-}
-
-enum DataLoadingState<Data> {
-    case Idle
-    case Loading
-    case Successed(Data)
-    case Failed(Error)
-}
-
-@MainActor
-class ReposStore: ObservableObject {
-    @Published private(set) var dataLoadingState: DataLoadingState<[Repo]> = .Idle
-    
-    func loadRepos(searchType: SearchType, searchQuery: String) async {
-        dataLoadingState = .Loading
-        
-        switch searchType {
-        case .Username:
-            do {
-                let res = try await GitHubApiClient.listRepositoriesForAUser(username: searchQuery)
-                let data = Repos.fromApiResponseToModel(responseRepos: res)
-                dataLoadingState = .Successed(data)
-            } catch let error {
-                print("Error on loadRepos: \(error)")
-                dataLoadingState = .Failed(error)
-            }
-        case .Organization:
-            // NOP
-            // TODO: GitHub Organization 検索用のメソッドを API クライアントに実装する
-            break
-        }
-    }
-}
-
 struct RepoListView: View {
-    @StateObject private var reposStore = ReposStore()
-    
-    @State private var searchType: SearchType = .Username
-    @State private var searchQuery: String = "nukopy"
+    @StateObject private var viewModel = RepoListViewModel()
     
     var body: some View {
         NavigationView {
             Group {
-                switch reposStore.dataLoadingState {
+                switch viewModel.dataLoadingState {
                 case .Idle, .Loading:
                     ProgressView("Loading...")
                 case .Successed(let repos):
@@ -85,7 +45,7 @@ struct RepoListView: View {
                         
                         Button(action: {
                             Task {
-                                await reposStore.loadRepos(searchType: searchType, searchQuery: searchQuery)
+                                await viewModel.onRetryButtonTapped()
                             }
                         }) {
                             Text("Retry")
@@ -98,7 +58,7 @@ struct RepoListView: View {
             .navigationTitle("Repositories")
         }
         .task {
-            await reposStore.loadRepos(searchType: searchType, searchQuery: searchQuery)
+            await viewModel.onAppear()
         }
     }
 }
