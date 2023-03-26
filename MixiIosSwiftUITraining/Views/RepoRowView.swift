@@ -22,7 +22,6 @@ struct RepoRowView: View {
                 Text(repo.name)
                     .font(.body)
                     .fontWeight(.semibold)
-                
             }
         }
     }

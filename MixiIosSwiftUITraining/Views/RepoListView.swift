@@ -8,15 +8,41 @@
 import SwiftUI
 import CoreData
 
+enum SearchType {
+    case Username
+    case Organization
+}
+
+@MainActor
+class ReposStore: ObservableObject {
+    
+    @Published private(set) var repos = [Repo]()
+    
+    func loadRepos(searchType: SearchType, searchQuery: String) async {
+        switch searchType {
+        case .Username:
+            let res = await GitHubApiClient.listRepositoriesForAUser(username: searchQuery)
+            self.repos = Repos.fromApiResponseToModel(responseRepos: res)
+        case .Organization:
+            // NOP
+            // TODO: GitHub Organization 検索用のメソッドを API クライアントに実装する
+            break
+        }
+    }
+}
+
 struct RepoListView: View {
-    @State private var mockRepos: [Repo] = []
+    @StateObject private var reposStore = ReposStore()
+    
+    @State private var searchType: SearchType = .Username
+    @State private var searchQuery: String = "nukopy"
     
     var body: some View {
         NavigationView {
-            if mockRepos.isEmpty {
+            if reposStore.repos.isEmpty {
                 ProgressView("Loading...")
             } else {
-                List(mockRepos) { repo in
+                List(reposStore.repos) { repo in
                     NavigationLink(destination: RepoDetailView(repo: repo)
                         .navigationBarTitleDisplayMode(.inline)
                     ) {
@@ -26,16 +52,8 @@ struct RepoListView: View {
                 .navigationTitle("Repositories")
             }
         }
-        .onAppear {
-            loadRepos()
-        }
-    }
-    
-    private func loadRepos() {
-        // 1.5 秒後にモックデータを読み込む
-        // TODO: API からデータを取得する処理に変える
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            mockRepos = [.mock1, .mock2, .mock3, .mock4, .mock5]
+        .task {
+            await reposStore.loadRepos(searchType: searchType, searchQuery: searchQuery)
         }
     }
 }

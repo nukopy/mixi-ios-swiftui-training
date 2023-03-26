@@ -26,8 +26,11 @@ struct RepoDetailView: View {
                     Text(repo.name)
                         .font(.body)
                         .fontWeight(.bold)
-                    Text(repo.description)
-                        .padding(.top, 4)
+                    
+                    if !repo.description.isEmpty {
+                        Text(repo.description)
+                            .padding(.top, 4)
+                    }
                     
                     HStack {
                         Image(systemName: "star")
@@ -46,6 +49,9 @@ struct RepoDetailView: View {
 
 struct RepoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RepoDetailView(repo: .mock1)
+        Group {
+            RepoDetailView(repo: .mock1)
+            RepoDetailView(repo: .mock2)
+        }
     }
 }

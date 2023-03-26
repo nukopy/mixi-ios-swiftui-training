@@ -13,6 +13,10 @@
 		ADAFC18D29CF6329006A77FE /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18C29CF6329006A77FE /* RepoDetailView.swift */; };
 		ADAFC19129CF65D5006A77FE /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC19029CF65D5006A77FE /* User+mock.swift */; };
 		ADAFC19329CF65FA006A77FE /* Repo+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC19229CF65FA006A77FE /* Repo+mock.swift */; };
+		ADAFC19629CFA12B006A77FE /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC19529CFA12B006A77FE /* HttpClient.swift */; };
+		ADAFC19A29CFA5C0006A77FE /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC19929CFA5C0006A77FE /* ApiClient.swift */; };
+		ADAFC19D29CFAF83006A77FE /* ResponseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC19C29CFAF83006A77FE /* ResponseTypes.swift */; };
+		ADAFC1A129CFBAB6006A77FE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC1A029CFBAB6006A77FE /* Models.swift */; };
 		ADDCE69F29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE69E29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift */; };
 		ADDCE6A129CDE6790000BBA6 /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCE6A029CDE6790000BBA6 /* RepoListView.swift */; };
 		ADDCE6A329CDE67A0000BBA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDCE6A229CDE67A0000BBA6 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 		ADAFC18C29CF6329006A77FE /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
 		ADAFC19029CF65D5006A77FE /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
 		ADAFC19229CF65FA006A77FE /* Repo+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift"; sourceTree = "<group>"; };
+		ADAFC19529CFA12B006A77FE /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		ADAFC19929CFA5C0006A77FE /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		ADAFC19C29CFAF83006A77FE /* ResponseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTypes.swift; sourceTree = "<group>"; };
+		ADAFC1A029CFBAB6006A77FE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		ADDCE69B29CDE6790000BBA6 /* MixiIosSwiftUITraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixiIosSwiftUITraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDCE69E29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixiIosSwiftUITrainingApp.swift; sourceTree = "<group>"; };
 		ADDCE6A029CDE6790000BBA6 /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
@@ -72,6 +80,25 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		ADAFC19429CFA110006A77FE /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFC19B29CFAF5F006A77FE /* GitHubApi */,
+				ADAFC19529CFA12B006A77FE /* HttpClient.swift */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		ADAFC19B29CFAF5F006A77FE /* GitHubApi */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFC19929CFA5C0006A77FE /* ApiClient.swift */,
+				ADAFC19C29CFAF83006A77FE /* ResponseTypes.swift */,
+				ADAFC1A029CFBAB6006A77FE /* Models.swift */,
+			);
+			path = GitHubApi;
+			sourceTree = "<group>";
+		};
 		ADDCE69229CDE6790000BBA6 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +118,7 @@
 		ADDCE69D29CDE6790000BBA6 /* MixiIosSwiftUITraining */ = {
 			isa = PBXGroup;
 			children = (
+				ADAFC19429CFA110006A77FE /* ApiServices */,
 				ADDCE69E29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift */,
 				ADAFC18E29CF63C7006A77FE /* Views */,
 				ADAFC18929CF61BF006A77FE /* Models */,
@@ -181,8 +209,12 @@
 			files = (
 				ADAFC18829CF61B4006A77FE /* User.swift in Sources */,
 				ADAFC19129CF65D5006A77FE /* User+mock.swift in Sources */,
+				ADAFC19D29CFAF83006A77FE /* ResponseTypes.swift in Sources */,
+				ADAFC1A129CFBAB6006A77FE /* Models.swift in Sources */,
 				ADAFC18629CF61A3006A77FE /* Repo.swift in Sources */,
+				ADAFC19A29CFA5C0006A77FE /* ApiClient.swift in Sources */,
 				ADDCE6A129CDE6790000BBA6 /* RepoListView.swift in Sources */,
+				ADAFC19629CFA12B006A77FE /* HttpClient.swift in Sources */,
 				ADAFC18D29CF6329006A77FE /* RepoDetailView.swift in Sources */,
 				ADAFC19329CF65FA006A77FE /* Repo+mock.swift in Sources */,
 				ADDCE69F29CDE6790000BBA6 /* MixiIosSwiftUITrainingApp.swift in Sources */,

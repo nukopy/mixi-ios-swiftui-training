@@ -10,3 +10,9 @@ import Foundation
 struct User {
     let name: String
 }
+
+extension User {
+    static func fromApiResponseToModel(responseUser: GitHubUser) -> User {
+        return User(name: responseUser.login)
+    }
+}

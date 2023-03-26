@@ -17,9 +17,9 @@ extension Repo {
     )
     static let mock2 = Repo(
         id: 2,
-        name: "Test Repo2",
+        name: "Test Repo2 which description is empty",
         owner: .mock2,
-        description: "This is a good code sample",
+        description: "",
         stargazersCount: 10
     )
     static let mock3 = Repo(
