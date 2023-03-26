@@ -11,7 +11,7 @@ import SwiftUI
 struct MixiIosSwiftUITrainingApp: App {
     var body: some Scene {
         WindowGroup {
-            RepoListView()
+            RepoListView(viewModel: RepoListViewModel())
                 .preferredColorScheme(.light)
         }
     }

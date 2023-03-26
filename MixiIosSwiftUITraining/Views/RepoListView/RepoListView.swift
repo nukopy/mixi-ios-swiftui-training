@@ -9,7 +9,13 @@ import SwiftUI
 import CoreData
 
 struct RepoListView: View {
-    @StateObject private var viewModel = RepoListViewModel()
+    @StateObject private var viewModel: RepoListViewModel
+    
+    init(viewModel: RepoListViewModel) {
+        // Cannot assign to property: 'viewModel' is a get-only property
+        // @StateObject で annotate された property は get-only の制約が課されてしまうため、イニシャライザ引数による DI ができない
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationView {
@@ -65,6 +71,20 @@ struct RepoListView: View {
 
 struct RepoListView_Previews: PreviewProvider {
     static var previews: some View {
-        RepoListView()
+        let mockRepos: [Repo] = [.mock1, .mock2, .mock3, .mock4, .mock5]
+        
+        // mock usecases
+        let successedUsecase = MockGetRepositoriesOfSpecificUserUseCase(repos: mockRepos)
+        let emptyUsecase = MockGetRepositoriesOfSpecificUserUseCase(repos: [Repo]())
+        let failedUsecase = MockGetRepositoriesOfSpecificUserUseCase(repos: [Repo](), error: DummyError())
+        
+        Group {
+            RepoListView(viewModel: RepoListViewModel(usecase: successedUsecase))
+                .previewDisplayName("Success: 5 Repositories got")
+            RepoListView(viewModel: RepoListViewModel(usecase: emptyUsecase))
+                .previewDisplayName("Success: Repositories is empty ")
+            RepoListView(viewModel: RepoListViewModel(usecase: failedUsecase))
+                .previewDisplayName("Failed: Error occurred when getting repositories")
+        }
     }
 }
