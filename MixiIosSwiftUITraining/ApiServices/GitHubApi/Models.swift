@@ -27,7 +27,7 @@ struct Plan: Decodable {
 // ref: https://github.com/nerdishbynature/octokit.swift/blob/main/OctoKit/User.swift#L9:12
 struct GitHubUser: Decodable {
     let id: Int
-    let login: String
+    let login: String // GitHub のユーザ ID (e.g. "nukopy")
     let avatarURL: String?
     let gravatarID: String?
     let type: String?
@@ -68,8 +68,8 @@ struct GitHubUser: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case login
-        case avatarURL = "avatar_url"
-        case gravatarID = "gravatar_id"
+        case avatarURL
+        case gravatarID
         case type
         case name
         case company
@@ -79,25 +79,25 @@ struct GitHubUser: Decodable {
         case numberOfPublicRepos = "public_repos"
         case numberOfPublicGists = "public_gists"
         case numberOfPrivateRepos = "total_private_repos"
-        case nodeID = "node_id"
+        case nodeID
         case url
-        case htmlURL = "html_url"
-        case followersURL = "followers_url"
-        case followingURL = "following_url"
-        case gistsURL = "gists_url"
-        case starredURL = "starred_url"
-        case subscriptionsURL = "subscriptions_url"
-        case reposURL = "repos_url"
-        case eventsURL = "events_url"
-        case receivedEventsURL = "received_events_url"
-        case siteAdmin = "site_admin"
+        case htmlURL
+        case followersURL
+        case followingURL
+        case gistsURL
+        case starredURL
+        case subscriptionsURL
+        case reposURL
+        case eventsURL
+        case receivedEventsURL
+        case siteAdmin
         case hireable
         case bio
-        case twitterUsername = "twitter_username"
+        case twitterUsername
         case numberOfFollowers = "followers"
         case numberOfFollowing = "following"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
+        case createdAt
+        case updatedAt
         case numberOfPrivateGists = "private_gists"
         case numberOfOwnPrivateRepos = "owned_private_repos"
         case amountDiskUsage = "disk_usage"
@@ -129,16 +129,16 @@ struct GitHubRepository: Decodable {
         case id
         case owner
         case name
-        case fullName = "full_name"
+        case fullName
         case isPrivate = "private"
         case repositoryDescription = "description"
         case isFork = "fork"
-        case gitURL = "git_url"
-        case sshURL = "ssh_url"
-        case cloneURL = "clone_url"
-        case htmlURL = "html_url"
+        case gitURL
+        case sshURL
+        case cloneURL
+        case htmlURL
         case size
         case lastPush = "pushed_at"
-        case stargazersCount = "stargazers_count"
+        case stargazersCount
     }
 }

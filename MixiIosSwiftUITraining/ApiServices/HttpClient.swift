@@ -25,7 +25,10 @@ class HttpClient {
         
         // decode response
         do {
-            let decodedData = try JSONDecoder().decode(ResponseType.self, from: data)
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            let decodedData = try jsonDecoder.decode(ResponseType.self, from: data)
             
             return decodedData
         } catch let error {
