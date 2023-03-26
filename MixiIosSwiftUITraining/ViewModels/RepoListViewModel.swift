@@ -30,7 +30,11 @@ class RepoListViewModel: ObservableObject, RepoListViewModelProtocol {
     @Published public var searchType: SearchType = .Username
     @Published public var searchQuery: String = "nukopy"
     
-    private let usecase = GetGitHubRepositoriesOfSpecificUserUseCase()
+    private let usecase: GetGitHubRepositoriesOfSpecificUserUseCaseProtocol
+    
+    init(usecase: GetGitHubRepositoriesOfSpecificUserUseCaseProtocol = GetGitHubRepositoriesOfSpecificUserUseCase()) {
+        self.usecase = usecase
+    }
     
     func onAppear() async {
         dataLoadingState = .Loading
@@ -38,7 +42,6 @@ class RepoListViewModel: ObservableObject, RepoListViewModelProtocol {
             let repos = try await usecase.execute(searchType: searchType, searchQuery: searchQuery)
             dataLoadingState = .Successed(repos)
         } catch let error {
-            print("Error: \(error)")
             dataLoadingState = .Failed(error)
         }
     }

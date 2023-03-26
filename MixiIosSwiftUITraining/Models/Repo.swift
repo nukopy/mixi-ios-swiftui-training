@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repo: Identifiable {
+struct Repo: Identifiable, Equatable {
     let id: Int
     let name: String
     let owner: User

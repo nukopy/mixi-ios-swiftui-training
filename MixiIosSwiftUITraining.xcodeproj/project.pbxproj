@@ -10,6 +10,11 @@
 		AD29528029D05C6200AAA6C4 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29527F29D05C6200AAA6C4 /* RepoListViewModel.swift */; };
 		AD29528429D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */; };
 		AD29528629D0672900AAA6C4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29528529D0672900AAA6C4 /* Repository.swift */; };
+		AD29528E29D0DB8900AAA6C4 /* GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29528D29D0DB8900AAA6C4 /* GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift */; };
+		AD29529B29D0E5C700AAA6C4 /* Repository+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29529A29D0E5C700AAA6C4 /* Repository+mock.swift */; };
+		AD29529E29D0E77900AAA6C4 /* GetRepositoriesOfSpecificUserUseCase+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29529D29D0E77900AAA6C4 /* GetRepositoriesOfSpecificUserUseCase+mock.swift */; };
+		AD2952A029D0E7F700AAA6C4 /* DummyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29529F29D0E7F700AAA6C4 /* DummyError.swift */; };
+		AD2952A229D0E8E800AAA6C4 /* RepoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2952A129D0E8E800AAA6C4 /* RepoListViewModelTests.swift */; };
 		ADAFC18629CF61A3006A77FE /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18529CF61A3006A77FE /* Repo.swift */; };
 		ADAFC18829CF61B4006A77FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18729CF61B4006A77FE /* User.swift */; };
 		ADAFC18B29CF62CD006A77FE /* RepoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */; };
@@ -26,10 +31,26 @@
 		ADDCE6A629CDE67A0000BBA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDCE6A529CDE67A0000BBA6 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AD29528F29D0DB8900AAA6C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADDCE69329CDE6790000BBA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDCE69A29CDE6790000BBA6;
+			remoteInfo = MixiIosSwiftUITraining;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AD29527F29D05C6200AAA6C4 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesOfSpecificUserUseCase.swift; sourceTree = "<group>"; };
 		AD29528529D0672900AAA6C4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		AD29528B29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixiIosSwiftUITrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD29528D29D0DB8900AAA6C4 /* GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift; sourceTree = "<group>"; };
+		AD29529A29D0E5C700AAA6C4 /* Repository+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+mock.swift"; sourceTree = "<group>"; };
+		AD29529D29D0E77900AAA6C4 /* GetRepositoriesOfSpecificUserUseCase+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetRepositoriesOfSpecificUserUseCase+mock.swift"; sourceTree = "<group>"; };
+		AD29529F29D0E7F700AAA6C4 /* DummyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyError.swift; sourceTree = "<group>"; };
+		AD2952A129D0E8E800AAA6C4 /* RepoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModelTests.swift; sourceTree = "<group>"; };
 		ADAFC18529CF61A3006A77FE /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		ADAFC18729CF61B4006A77FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADAFC18A29CF62CD006A77FE /* RepoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRowView.swift; sourceTree = "<group>"; };
@@ -48,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD29528829D0DB8900AAA6C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDCE69829CDE6790000BBA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,13 +104,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		AD29527C29D05C0800AAA6C4 /* ExternalDataSource */ = {
+		AD29527C29D05C0800AAA6C4 /* ExternalDataSources */ = {
 			isa = PBXGroup;
 			children = (
 				AD29527E29D05C3C00AAA6C4 /* Common */,
 				ADAFC19B29CFAF5F006A77FE /* GitHub */,
 			);
-			path = ExternalDataSource;
+			path = ExternalDataSources;
 			sourceTree = "<group>";
 		};
 		AD29527E29D05C3C00AAA6C4 /* Common */ = {
@@ -97,6 +125,72 @@
 			isa = PBXGroup;
 			children = (
 				AD29528329D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		AD29528C29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD29529529D0DDAF00AAA6C4 /* UseCases */,
+				AD29529429D0DC0700AAA6C4 /* ViewModels */,
+			);
+			path = MixiIosSwiftUITrainingTests;
+			sourceTree = "<group>";
+		};
+		AD29529429D0DC0700AAA6C4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AD2952A129D0E8E800AAA6C4 /* RepoListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD29529529D0DDAF00AAA6C4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AD29528D29D0DB8900AAA6C4 /* GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		AD29529629D0E41400AAA6C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFC19229CF65FA006A77FE /* Repo+mock.swift */,
+				ADAFC19029CF65D5006A77FE /* User+mock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD29529729D0E41F00AAA6C4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				AD29529829D0E42900AAA6C4 /* ExternalDataSources */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AD29529829D0E42900AAA6C4 /* ExternalDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AD29529929D0E5B000AAA6C4 /* GitHub */,
+			);
+			path = ExternalDataSources;
+			sourceTree = "<group>";
+		};
+		AD29529929D0E5B000AAA6C4 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				AD29529A29D0E5C700AAA6C4 /* Repository+mock.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		AD29529C29D0E75A00AAA6C4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AD29529D29D0E77900AAA6C4 /* GetRepositoriesOfSpecificUserUseCase+mock.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -121,8 +215,10 @@
 		ADAFC18F29CF645B006A77FE /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				ADAFC19029CF65D5006A77FE /* User+mock.swift */,
-				ADAFC19229CF65FA006A77FE /* Repo+mock.swift */,
+				AD29529C29D0E75A00AAA6C4 /* UseCases */,
+				AD29529729D0E41F00AAA6C4 /* Repositories */,
+				AD29529629D0E41400AAA6C4 /* Models */,
+				AD29529F29D0E7F700AAA6C4 /* DummyError.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -130,7 +226,7 @@
 		ADAFC19429CFA110006A77FE /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				AD29527C29D05C0800AAA6C4 /* ExternalDataSource */,
+				AD29527C29D05C0800AAA6C4 /* ExternalDataSources */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -150,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDCE69D29CDE6790000BBA6 /* MixiIosSwiftUITraining */,
+				AD29528C29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests */,
 				ADDCE69C29CDE6790000BBA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -158,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDCE69B29CDE6790000BBA6 /* MixiIosSwiftUITraining.app */,
+				AD29528B29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +287,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD29528A29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD29529129D0DB8900AAA6C4 /* Build configuration list for PBXNativeTarget "MixiIosSwiftUITrainingTests" */;
+			buildPhases = (
+				AD29528729D0DB8900AAA6C4 /* Sources */,
+				AD29528829D0DB8900AAA6C4 /* Frameworks */,
+				AD29528929D0DB8900AAA6C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD29529029D0DB8900AAA6C4 /* PBXTargetDependency */,
+			);
+			name = MixiIosSwiftUITrainingTests;
+			productName = MixiIosSwiftUITrainingTests;
+			productReference = AD29528B29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ADDCE69A29CDE6790000BBA6 /* MixiIosSwiftUITraining */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADDCE6C429CDE67A0000BBA6 /* Build configuration list for PBXNativeTarget "MixiIosSwiftUITraining" */;
@@ -216,6 +332,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					AD29528A29D0DB8900AAA6C4 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = ADDCE69A29CDE6790000BBA6;
+					};
 					ADDCE69A29CDE6790000BBA6 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -235,11 +355,19 @@
 			projectRoot = "";
 			targets = (
 				ADDCE69A29CDE6790000BBA6 /* MixiIosSwiftUITraining */,
+				AD29528A29D0DB8900AAA6C4 /* MixiIosSwiftUITrainingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD29528929D0DB8900AAA6C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDCE69929CDE6790000BBA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,15 +380,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD29528729D0DB8900AAA6C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD2952A229D0E8E800AAA6C4 /* RepoListViewModelTests.swift in Sources */,
+				AD29528E29D0DB8900AAA6C4 /* GetGitHubRepositoriesOfSpecificUserUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDCE69729CDE6790000BBA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD29529E29D0E77900AAA6C4 /* GetRepositoriesOfSpecificUserUseCase+mock.swift in Sources */,
+				AD2952A029D0E7F700AAA6C4 /* DummyError.swift in Sources */,
 				ADAFC18829CF61B4006A77FE /* User.swift in Sources */,
 				ADAFC19129CF65D5006A77FE /* User+mock.swift in Sources */,
 				AD29528629D0672900AAA6C4 /* Repository.swift in Sources */,
 				ADAFC19D29CFAF83006A77FE /* ResponseTypes.swift in Sources */,
 				AD29528029D05C6200AAA6C4 /* RepoListViewModel.swift in Sources */,
+				AD29529B29D0E5C700AAA6C4 /* Repository+mock.swift in Sources */,
 				AD29528429D05E7600AAA6C4 /* GetRepositoriesOfSpecificUserUseCase.swift in Sources */,
 				ADAFC1A129CFBAB6006A77FE /* Models.swift in Sources */,
 				ADAFC18629CF61A3006A77FE /* Repo.swift in Sources */,
@@ -276,7 +416,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AD29529029D0DB8900AAA6C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDCE69A29CDE6790000BBA6 /* MixiIosSwiftUITraining */;
+			targetProxy = AD29528F29D0DB8900AAA6C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AD29529229D0DB8900AAA6C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AJZ2G6CWG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nukopy.MixiIosSwiftUITrainingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MixiIosSwiftUITraining.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MixiIosSwiftUITraining";
+			};
+			name = Debug;
+		};
+		AD29529329D0DB8900AAA6C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AJZ2G6CWG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nukopy.MixiIosSwiftUITrainingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MixiIosSwiftUITraining.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MixiIosSwiftUITraining";
+			};
+			name = Release;
+		};
 		ADDCE6C229CDE67A0000BBA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -452,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD29529129D0DB8900AAA6C4 /* Build configuration list for PBXNativeTarget "MixiIosSwiftUITrainingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD29529229D0DB8900AAA6C4 /* Debug */,
+				AD29529329D0DB8900AAA6C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ADDCE69629CDE6790000BBA6 /* Build configuration list for PBXProject "MixiIosSwiftUITraining" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -11,8 +11,17 @@ enum SearchTypeError: Error {
     case unknownSearchType
 }
 
-class GetGitHubRepositoriesOfSpecificUserUseCase {
-    let githubRepository = GitHubRepository()
+protocol GetGitHubRepositoriesOfSpecificUserUseCaseProtocol {
+    func execute(searchType: SearchType, searchQuery: String) async throws -> [Repo]
+}
+
+struct GetGitHubRepositoriesOfSpecificUserUseCase: GetGitHubRepositoriesOfSpecificUserUseCaseProtocol {
+    private let githubRepository: GitHubRepositoryProtocol
+    
+    // Dependency Injection（GitHubRepository の I/F を抽象化した protocol をイニシャライザの引数とする）
+    init(githubRepository: GitHubRepositoryProtocol = GitHubRepository()) {
+        self.githubRepository = githubRepository
+    }
     
     func execute(searchType: SearchType, searchQuery: String) async throws -> [Repo] {
         do {
@@ -26,7 +35,6 @@ class GetGitHubRepositoriesOfSpecificUserUseCase {
                 throw SearchTypeError.unknownSearchType
             }
         } catch let error {
-            print("Error on GetGitHubRepositoriesOfSpecificUserUseCase: \(error)")
             throw error
         }
     }
