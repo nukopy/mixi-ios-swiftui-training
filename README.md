@@ -11,6 +11,12 @@ MIXI の 2022 新卒 iOS 研修をやるリポジトリ。MVVM + UseCase + Repos
   - YouTube の講義動画
     - https://youtu.be/u5SzwEAydYo
 
+## 環境
+
+- iOS 16.2
+- Xcode 14.2
+- Swift v5.7.2
+
 ## 成果物
 
 GitHub クライアントアプリ。自分の public なリポジトリを取得して表示することができるシンプルなアプリ。
